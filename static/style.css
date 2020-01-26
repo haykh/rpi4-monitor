@@ -1,0 +1,51 @@
+body {
+  background: #2f2f2f;
+  color: white;
+  font-family: 'DecimaMonoPro', monospace;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1;
+}
+
+.axis-grid line {
+  stroke: black;
+}
+
+.line-plot {
+  display: inline-block;
+}
+
+.line-plot text {
+  fill: white;
+}
+
+.regime-group a {
+  background-color: #4f4f4f;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.regime-group a:not(:last-child) {
+  border-right: none;
+}
+
+.regime-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.regime-group a:hover {
+  background-color: #8e3e3e;
+}
+
+.regime-group a.active {
+  background-color: #d53030;
+}

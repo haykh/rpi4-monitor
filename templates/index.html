@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block head %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.3.0/json2html.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class='container'>
+    <center>
+
+      <script type="text/javascript">
+        var dataTemplate = {{ globalNamespace.dataTemplate | safe }};
+        var timeRegimes = {{ globalNamespace.intervalRegimes | safe }};
+        var REFRESH_RATE = 1000; // milliseconds
+
+        var total_memory = {{ globalNamespace.memtot }};
+      </script>
+
+      <div class='regime-group'>
+        <center>
+        </center>
+      </div>
+
+      {% for key in entries %}
+        <div class='line-plot' id='{{ key }}'>
+        </div>
+      {% endfor %}
+    </center>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script src="{{url_for('static', filename='script.js')}}"></script>
+{% endblock %}
